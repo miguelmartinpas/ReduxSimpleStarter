@@ -22,7 +22,7 @@ class App extends Component {
   }
 
   youtubeAPIResponse(videos) {
-    this.setState({ ...this.state, videos });
+    this.setState({ ...this.state, videos, selectedVideo: videos[0] });
   }
 
   handlerSearchValue(value) {
