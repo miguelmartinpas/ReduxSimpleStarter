@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { PanelGroup, Panel, Row, Col } from 'react-bootstrap';
+import { PanelGroup, Panel, Row, Col, Image } from 'react-bootstrap';
 import YoutubeSearch from 'youtube-api-search';
 import _ from 'lodash';
 
@@ -38,7 +38,14 @@ class App extends Component {
       <div className="video-app">
         <PanelGroup>
           <Panel>
-            <SearchBar onChange={_.debounce(value => this.handlerSearchValue(value), 300)}></SearchBar>
+            <Row>
+              <Col xs={1}>
+                <Image src="./assets/logo.svg" responsive />
+              </Col>
+              <Col xs={11}>
+                <SearchBar onChange={_.debounce(value => this.handlerSearchValue(value), 300)}></SearchBar>
+              </Col>
+            </Row>
           </Panel>
           <Panel>
             <Row>

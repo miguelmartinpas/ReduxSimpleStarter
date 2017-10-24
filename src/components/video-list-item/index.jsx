@@ -15,7 +15,7 @@ class VideoListItem extends Component {
   }
 
   get brokeImage() {
-    return 'https://pbs.twimg.com/media/B9mGvoIIMAEbl_t.png';
+    return './assets/no-image.png';
   }
 
   render() {
