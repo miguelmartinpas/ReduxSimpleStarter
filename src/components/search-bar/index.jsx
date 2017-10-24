@@ -1,33 +1,23 @@
 import React, { Component } from 'react';
-import { Button, Form, Col, FormGroup, FormControl } from 'react-bootstrap';
+import { Row, Col, FormGroup, FormControl } from 'react-bootstrap';
 
 class SearchBar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { value: props.value || '' };
-  }
-
-  handleChange(event) {
-    this.setState({ value: event.target ? event.target.value : '' });
-  }
-
-  handleClick() {
-    this.props.onChange(this.state.value);
+  handleChange(value) {
+    this.props.onChange(value);
   }
 
   render() {
     return (
       <div className="search-bar">
-        <Form>
-          <FormGroup>
-            <Col xs={10}>
-              <FormControl ref="search" type="text" placeholder="Search" value={this.state.value} onChange={this.handleChange.bind(this)}/>
+        <FormGroup>
+          <Row>
+            <Col xs={12}>
+              <FormControl ref="search" type="text" placeholder="Search"
+                onChange={event => this.handleChange(event.target.value)}/
+              >
             </Col>
-            <Col xs={2}>
-              <Button onClick={this.handleClick.bind(this)}>Submit</Button>
-            </Col>
-          </FormGroup>
-        </Form>
+          </Row>
+        </FormGroup>
       </div>
     );
   }
