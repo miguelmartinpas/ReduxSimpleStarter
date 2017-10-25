@@ -1,4 +1,4 @@
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: [
@@ -25,11 +25,7 @@ module.exports = {
       },
       {
         test: /\.less$/,
-        exclude: /node_modules/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader', 'less-loader']
-        })
+        loader: 'style-loader!css-loader!less-loader'
       }
     ]
   },
@@ -39,8 +35,5 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     contentBase: './'
-  }/*,
-  plugins: [
-    new ExtractTextPlugin('video.css')
-  ]*/
+  }
 };

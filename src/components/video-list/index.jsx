@@ -3,6 +3,8 @@ import { ListGroup } from 'react-bootstrap';
 
 import VideoListItem from '../video-list-item/index.jsx';
 
+import './video-list.less';
+
 class VideoList extends Component {
   onItemClick(video) {
     this.props.onClickVideo(video);
